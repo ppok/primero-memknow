@@ -3,7 +3,8 @@
 <table>
   <thead>
     <tr>
-      <th></th>
+      <th>mem</th>
+      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,14 +13,18 @@
     <% @mems.each do |mem| %>
       <tr>
         <td><%= mem.description %></td>
+        <td><%= mem.user.email if mem.user%></td>
         <td><%= link_to 'Show', mem %></td>
+        <% if mem.user == current_user %>
         <td><%= link_to 'Edit', edit_mem_path(mem) %></td>
         <td><%= link_to 'Destroy', mem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>     
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if user_signed_in? %>
 <%= link_to 'New Mem', new_mem_path %>
+<% end %>

@@ -5,5 +5,8 @@
   <%= @mem.description %>
 </p>
 
-<%= link_to 'Edit', edit_mem_path(@mem) %> |
+<% if @mem.user == current_user %>
+	<%= link_to 'Edit', edit_mem_path(@mem) %> |
+<% end %>
+
 <%= link_to 'Back', mems_path %>
