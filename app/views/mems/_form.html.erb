@@ -1,0 +1,25 @@
+<%= form_for(@mem) do |f| %>
+  <% if @mem.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mem.errors.count, "error") %> prohibited this mem from being saved:</h2>
+
+      <ul>
+      <% @mem.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <form role="form">
+  <div class="form-group">
+    <label for="question"></label>
+    <input type="text" class="form-control input-lg" id="question" placeholder="Question?">
+  </div>
+  <div class="form-group">
+    <label for="answer"></label>
+    <input type="text" class="form-control input-lg" id="answer" placeholder="Answer!">
+  </div> <!--make form input less wide and heigher -->
+    <button type="submit" class="btn btn-danger btn-lg">Create</button>
+</form>
+<% end %>
