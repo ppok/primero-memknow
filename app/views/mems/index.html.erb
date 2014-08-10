@@ -1,13 +1,13 @@
-<div class="jumbotron center">
+<%= render 'pages/home' unless user_signed_in? %>
 
 <h2>Here are your mems, yo</h2>
 
-<table>
+<div class="table-responsive">
+<table class="table table-hover" class="">
   <thead>
     <tr>
       <th>Question</th>
       <th>User</th>
-
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,6 +26,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 
