@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140805180227) do
+ActiveRecord::Schema.define(version: 20140810184148) do
+
+  create_table "mems", force: true do |t|
+    t.string   "question"
+    t.string   "answer"
+    t.string   "score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Question:</strong><br>
+  <%= @mem.question %>
+</p>
+
+<p>
+  <strong>Answer:</strong><br>
+  <%= @mem.answer %>
+</p>
+
+<%= link_to 'Edit', edit_mem_path(@mem) %> |
+<%= link_to 'Back', mems_path %> 
