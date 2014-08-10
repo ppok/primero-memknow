@@ -11,16 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :question %><br>
-    <%= f.text_field :question %>
+    <%= f.text_field :question, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :answer %><br>
-    <%= f.text_field :answer %>
-    
+    <%= f.text_field :answer, class: "form-control" %>
+
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="gorm-group">
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>

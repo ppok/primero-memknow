@@ -1,5 +1,7 @@
 class MemsController < ApplicationController
   before_action :set_mem, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @mems = Mem.all
@@ -9,14 +11,14 @@ class MemsController < ApplicationController
   end
 
   def new
-    @mem = Mem.new
+    @mem = current_user.mems.build
   end
 
   def edit
   end
 
   def create
-    @mem = Mem.new(mem_params)
+    @mem = current_user.mems.build(mem_params)
     if @mem.save
         redirect_to @mem, notice: 'Your Mem was successfully spawned.'
       else
@@ -40,6 +42,11 @@ class MemsController < ApplicationController
   private
     def set_mem
       @mem = Mem.find(params[:id])
+    end
+
+    def correct_user
+      @mem = current_user.mems.find_by(id: params[:id])
+      redirect_to mems_path, notice: "Don't change what's not yours" if @mem.nil?
     end
 
     def mem_params

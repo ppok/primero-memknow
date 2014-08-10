@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+<<<<<<< HEAD
   question: MyString
   answer: MyString
   score: 
@@ -9,3 +10,9 @@ two:
   question: MyString
   answer: MyString
   score: 
+=======
+  description: MyString
+
+two:
+  description: MyString
+>>>>>>> c15ef2af56191c136dd43567be094b0f55d02f85

@@ -18,7 +18,11 @@ class MemsControllerTest < ActionController::TestCase
 
   test "should create mem" do
     assert_difference('Mem.count') do
+<<<<<<< HEAD
       post :create, mem: { answer: @mem.answer, question: @mem.question, score: @mem.score }
+=======
+      post :create, mem: { description: @mem.description }
+>>>>>>> c15ef2af56191c136dd43567be094b0f55d02f85
     end
 
     assert_redirected_to mem_path(assigns(:mem))
@@ -35,7 +39,11 @@ class MemsControllerTest < ActionController::TestCase
   end
 
   test "should update mem" do
+<<<<<<< HEAD
     patch :update, id: @mem, mem: { answer: @mem.answer, question: @mem.question, score: @mem.score }
+=======
+    patch :update, id: @mem, mem: { description: @mem.description }
+>>>>>>> c15ef2af56191c136dd43567be094b0f55d02f85
     assert_redirected_to mem_path(assigns(:mem))
   end
 
