@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :mems
 
   devise_for :users
-  root 'pages#home'
+  root 'mems#new'
   get 'about' => 'pages#about'
   get 'blog' => 'pages#blog'
 

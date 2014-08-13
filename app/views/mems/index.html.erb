@@ -1,5 +1,3 @@
-<%= render 'pages/home' unless user_signed_in? %>
-
 <h2>Here are your mems, yo</h2>
 
 <div class="table-responsive">
@@ -16,11 +14,13 @@
     <% @mems.each do |mem| %>
       <tr>
         <td><%= mem.question %></td>
-        <td><%= mem.user.email if mem.user %></td>
-        <td><%= link_to 'Answer', mem %></td>
+        <strong><td><%= mem.user.email if mem.user %></td><strong>
+        <td><%= link_to 'Answer', mem %></td><br>
         <% if mem.user == current_user %>
-        <td><%= link_to 'Edit', edit_mem_path(mem) %></td>
-        <td><%= link_to 'Delete', mem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <div class="actions">
+          <td><%= link_to 'Edit', edit_mem_path(mem) %></td>
+          <td><%= link_to 'Delete', mem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </div>
         <% end -%>
       </tr>
     <% end %>
@@ -29,6 +29,7 @@
 </div>
 
 <br>
+
 
 <% if user_signed_in? %>
   <%= link_to 'New Mem', new_mem_path %>

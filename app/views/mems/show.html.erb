@@ -1,16 +1,21 @@
+<div class="jumbotron center">
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Question:</strong><br>
-  <%= @mem.question %>
-</p>
+<div class="panel panel-default">
+  <div class="panel panel-primary"><strong>Question:</strong><br>
+  	<%= @mem.question %>
+  </div>
 
-<p>
-  <strong>Answer:</strong><br>
-  <%= @mem.answer %>
-</p>
+  <div class="panel panel-info"><strong>Answer:</strong><br>
+  	<%= @mem.answer %>
+  </div>
 
-<% if @mem.user == current_user %>
-	<%= link_to 'Edit', edit_mem_path(@mem) %> |
-<% end %>
-<%= link_to 'Back', mems_path %> 
+
+	<% if @mem.user == current_user %>
+		<div class="panel-footer">
+			<%= link_to 'Edit', edit_mem_path(@mem) %>
+		</div>
+	<% end %>
+
+</div>
