@@ -4,7 +4,9 @@ class MemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @mems = Mem.all
+    @mems = Mem.all # is this where I can order it by due date? 
+    # how to add due_date to schema.rb? active record: find_in_batches if due_date= today?
+    # Mem.find_each do |mem| mem.daily_deliver(mem).group("date(created_at)")
   end
 
   def show

@@ -14,7 +14,7 @@
     <% @mems.each do |mem| %>
       <tr>
         <td><%= mem.question %></td>
-        <strong><td><%= mem.user.email if mem.user %></td><strong>
+        <strong><td><%= mem.user.name if mem.user %></td><strong>
         <td><%= link_to 'Answer', mem %></td><br>
         <% if mem.user == current_user %>
         <div class="actions">
