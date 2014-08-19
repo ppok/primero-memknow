@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'tworgy-spaced-repeition'
 
 group :doc do
 	gem 'sdoc', require: false
